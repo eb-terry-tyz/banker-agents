@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light" data-accent="navy">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CapitalCore 资本智核 · 桌面工作台</title>
+<script>
+(function(){try{
+  var t=localStorage.getItem('cc-theme')||'light';
+  if(t==='system'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var a=localStorage.getItem('cc-accent')||'navy';
+  document.documentElement.dataset.theme=t; document.documentElement.dataset.accent=a;
+}catch(e){}})();
+</script>
+<script>window.__errs=[];window.addEventListener('error',e=>{window.__errs.push(String(e.message)+' @ '+(e.filename||'')+':'+(e.lineno||0))});</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="orbs" aria-hidden="true"><i class="o1"></i><i class="o2"></i><i class="o3"></i></div>
+
+<header class="tb">
+  <div class="tb-left">
+    <div class="logo">
+      <svg viewBox="0 0 36 36" width="34" height="34" aria-hidden="true">
+        <rect x="1" y="1" width="34" height="34" rx="10" fill="url(#lg)"/>
+        <rect x="9.5" y="14" width="4" height="12" rx="1.5" fill="#fff" opacity=".95"/>
+        <rect x="16" y="8.5" width="4" height="17.5" rx="1.5" fill="#fff" opacity=".82"/>
+        <rect x="22.5" y="17" width="4" height="9" rx="1.5" fill="#fff" opacity=".66"/>
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1d5c8f"/><stop offset="1" stop-color="#0f3057"/></linearGradient></defs>
+      </svg>
+      <div class="logo-t"><b>CapitalCore 资本智核</b><span>资本市场专业助理 · 桌面工作台</span></div>
+    </div>
+    <span class="tag-plan" id="planTag" title="当前订阅档位">投行版</span>
+  </div>
+
+  <nav class="tb-nav" id="tbNav"></nav>
+
+  <div class="tb-right">
+    <div class="tb-search">
+      <span class="search-ico" id="gsIco"></span>
+      <input id="gSearchInput" placeholder="跨项目搜索：文件 / 场景 / MCP…" autocomplete="off">
+      <div class="gs-drop" id="gsDrop"></div>
+    </div>
+    <div class="quota" id="tbQuota" title="本月 MCP 调用量（含在套餐内）"></div>
+    <button class="icon-btn" id="themeQuick" title="切换浅色 / 深色外观"></button>
+    <button class="icon-btn" id="chatToggle" title="项目会话面板"></button>
+    <div class="tb-user" id="tbUser" title="账户与设置">
+      <div class="ava">沈</div>
+      <div class="u"><b>沈亦舟</b><span>投行部 · 保荐代表人</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sb" id="sb"></aside>
+  <div class="sb-grip" id="sbGrip" title="拖拽调整侧栏宽度 · 双击复位"></div>
+  <main id="main"></main>
+  <aside class="chat" id="chatPanel">
+    <div class="chat-grip" id="chatGrip" title="向右收起会话面板"><span class="cg-ic" id="cgIc"></span><span class="cg-tx">收起会话</span></div>
+    <div class="chat-body" id="chatBody"></div>
+  </aside>
+</div>
+
+<div id="modalRoot"></div>
+<div id="menuRoot"></div>
+<div id="toastRoot"></div>
+
+<script src="data.js"></script>
+<script src="core.js"></script>
+<script src="ui.js"></script>
+<script src="views.js"></script>
+<script src="views2.js"></script>
+<script src="wizards.js"></script>
+<script src="account.js"></script>
+<script src="wizards2.js"></script>
+  </body>
+</html>
